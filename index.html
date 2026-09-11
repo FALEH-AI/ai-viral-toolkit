@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Viral Toolkit - Hook Generator, Script Writer & SEO Optimizer</title>
+    <meta name="description" content="Free AI-powered toolkit for YouTube Shorts creators. Generate viral hooks, write complete scripts, and optimize your SEO - all in one place.">
+    <meta name="keywords" content="youtube shorts, viral hooks, script generator, seo optimizer, ai tools, content creator, hook generator, youtube seo, shorts ideas">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .gradient-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0f 50%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            background: #151521;
+            border: 1px solid #222;
+            border-radius: 12px;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .tab:hover {
+            border-color: #00ffff;
+            color: #fff;
+        }
+        
+        .tab.active {
+            background: linear-gradient(135deg, #00ffff22, #ff00ff22);
+            border-color: #00ffff;
+            color: #fff;
+        }
+        
+        .panel {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .panel h2 {
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            color: #aaa;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #0a0a12;
+            border: 1px solid #222;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: #00ffff;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,255,255,0.3);
+        }
+        
+        .output {
+            margin-top: 20px;
+            background: #0a0a12;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+            display: none;
+        }
+        
+        .output.visible { display: block; }
+        
+        .output-content {
+            white-space: pre-wrap;
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .copy-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #00ffff;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+        
+        .copy-btn:hover { background: #222; }
+        
+        /* Ad Slots */
+        .ad-container {
+            margin: 20px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a12;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .ad-label {
+            color: #333;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Ad variants */
+        .ad-banner-top { min-height: 90px; }
+        .ad-banner-bottom { min-height: 90px; }
+        .ad-in-content { min-height: 250px; }
+        .ad-sidebar { min-height: 600px; }
+        .ad-mid-page { min-height: 200px; }
+        .ad-sticky {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 70px;
+            z-index: 100;
+            background: #0a0a12;
+            border-top: 1px solid #1e1e2e;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+        
+        .loading .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #222;
+            border-top-color: #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            font-size: 0.85em;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat { text-align: center; }
+        .stat-num { font-size: 1.8em; font-weight: bold; color: #00ffff; }
+        .stat-label { color: #888; font-size: 0.8em; }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .panel { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="container">
+        <!-- AD 1: Top Banner -->
+        <div class="ad-container ad-banner-top">
+            <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="SLOT1" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <header>
+            <h1>⚡ AI Viral Toolkit</h1>
+            <p class="tagline">Hooks • Scripts • SEO — All-in-One AI Powerhouse</p>
+            <div class="stats">
+                <div class="stat"><div class="stat-num" id="hookCount">0</div><div class="stat-label">Hooks Generated</div></div>
+                <div class="stat"><div class="stat-num" id="scriptCount">0</div><div class="stat-label">Scripts Written</div></div>
+                <div class="stat"><div class="stat-num" id="seoCount">0</div><div class="stat-label">SEO Optimized</div></div>
+            </div>
+        </header>
+        
+        <!-- AD 2: In-Header (High Visibility) -->
+        <div class="ad-container ad-in-content">
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('hooks')">🎣 Hook Generator</div>
+            <div class="tab" onclick="switchTab('scripts')">📝 Script Writer</div>
+            <div class="tab" onclick="switchTab('seo')">🏷️ SEO Optimizer</div>
+        </div>
+        
+        <!-- Hook Generator Panel -->
+        <div class="panel" id="hooks-panel">
+            <h2>🎣 Viral Hook Generator</h2>
+            <div class="input-group">
+                <label>Choose Your Niche</label>
+                <select id="hookNiche">
+                    <option value="wealth">Wealth & Money</option>
+                    <option value="mindset">Alpha Mindset</option>
+                    <option value="fitness">Fitness & Health</option>
+                    <option value="ai">AI & Tech</option>
+                    <option value="business">Business & Entrepreneurship</option>
+                    <option value="relationships">Relationships</option>
+                    <option value="productivity">Productivity</option>
+                    <option value="motivation">Motivation</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Tone (Optional)</label>
+                <select id="hookTone">
+                    <option value="shocking">Shocking / Controversial</option>
+                    <option value="curiosity">Curiosity Gap</option>
+                    <option value="authority">Authority / Expert</option>
+                    <option value="emotional">Emotional / Inspiring</option>
+                    <option value="funny">Funny / Relatable</option>
+                    <option value="any">Any (Surprise Me)</option>
+                </select>
+            </div>
+            <button class="btn" onclick="generateHooks()">Generate 10 Viral Hooks</button>
+            <div class="output" id="hooks-output">
+                <div class="output-content" id="hooks-content"></div>
+                <button class="copy-btn" onclick="copyText('hooks-content')">📋 Copy All</button>
+            </div>
+        </div>
+        
+        <!-- AD 3: Between Tools (Mid-Content) -->
+        <div class="ad-container ad-mid-page">
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <!-- Script Writer Panel -->
+        <div class="panel" id="scripts-panel" style="display:none">
+            <h2>📝 Short Script Writer</h2>
+            <div class="input-group">
+                <label>Topic / Idea</label>
+                <textarea id="scriptTopic" placeholder="e.g., The 5 habits that made me rich, Why motivation is a lie, The salary trap..."></textarea>
+            </div>
+            <div class="input-group">
+                <label>Duration</label>
+                <select id="scriptDuration">
+                    <option value="15">15 seconds (Quick)</option>
+                    <option value="30" selected>30 seconds (Standard)</option>
+                    <option value="45">45 seconds (Detailed)</option>
+                    <option value="60">60 seconds (Max)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Style</label>
+                <select id="scriptStyle">
+                    <option value="podcast">Podcast Clip Style</option>
+                    <option value="talking">Direct to Camera</option>
+                    <option value="voiceover">Voiceover + B-roll</option>
+                    <option value="story">Storytelling</option>
+                </select>
+            </div>
+            <button class="btn" onclick="generateScript()">Write Full Script</button>
+            <div class="output" id="script-output">
+                <div class="output-content" id="script-content"></div>
+                <button class="copy-btn" onclick="copyText('script-content')">📋 Copy Script</button>
+            </div>
+        </div>
+        
+        <!-- AD 4: Between Tools 2 -->
+        <div class="ad-container ad-mid-page">
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <!-- SEO Optimizer Panel -->
+        <div class="panel" id="seo-panel" style="display:none">
+            <h2>🏷️ YouTube SEO Optimizer</h2>
+            <div class="input-group">
+                <label>Video Topic / Title</label>
+                <textarea id="seoTopic" placeholder="e.g., How to build wealth from nothing, The paradox of money..."></textarea>
+            </div>
+            <div class="input-group">
+                <label>Target Audience</label>
+                <select id="seoAudience">
+                    <option value="us">United States (English)</option>
+                    <option value="uk">United Kingdom (English)</option>
+                    <option value="global">Global English</option>
+                    <option value="young">Young Adults (18-25)</option>
+                    <option value="entrepreneurs">Entrepreneurs</option>
+                </select>
+            </div>
+            <button class="btn" onclick="generateSEO()">Generate Full SEO Package</button>
+            <div class="output" id="seo-output">
+                <div class="output-content" id="seo-content"></div>
+                <button class="copy-btn" onclick="copyText('seo-content')">📋 Copy SEO Package</button>
+            </div>
+        </div>
+        
+        <!-- AD 5: Before Footer (High CTR) -->
+        <div class="ad-container ad-in-content">
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <!-- AD 6: Bottom Banner -->
+        <div class="ad-container ad-banner-bottom">
+            <span class="ad-label">Advertisement</span>
+        </div>
+        
+        <footer>
+            <p>⚡ AI Viral Toolkit — Built with AI • Free Forever</p>
+            <p style="margin-top: 8px; color: #333;">No sign-up needed. All tools work instantly.</p>
+        </footer>
+    </div>
+    
+    <!-- AD 7: Sticky Bottom (Always Visible) -->
+    <div class="ad-container ad-sticky">
+        <span class="ad-label">Advertisement</span>
+    </div>
+    
+    <script>
+        let stats = JSON.parse(localStorage.getItem('toolkitStats') || '{"hooks":0,"scripts":0,"seo":0}');
+        document.getElementById('hookCount').textContent = stats.hooks;
+        document.getElementById('scriptCount').textContent = stats.scripts;
+        document.getElementById('seoCount').textContent = stats.seo;
+        
+        function updateStats(type) {
+            stats[type]++;
+            localStorage.setItem('toolkitStats', JSON.stringify(stats));
+            document.getElementById(type + 'Count').textContent = stats[type];
+        }
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+            event.target.classList.add('active');
+            document.getElementById(tab + '-panel').style.display = 'block';
+        }
+        
+        function showLoading(id) {
+            const el = document.getElementById(id);
+            el.classList.add('visible');
+            el.querySelector('.output-content').innerHTML = '<div class="loading"><div class="spinner"></div><br>Generating with AI...</div>';
+        }
+        
+        function showOutput(id, content) {
+            const el = document.getElementById(id);
+            el.classList.add('visible');
+            el.querySelector('.output-content').textContent = content;
+        }
+        
+        function copyText(id) {
+            navigator.clipboard.writeText(document.getElementById(id).textContent);
+            alert('Copied!');
+        }
+        
+        const hookTemplates = {
+            wealth: {
+                shocking: ["Stop trying to get rich. Do THIS instead.","The reason you're broke? It's not what you think.","I made $10K in 30 days. Here's the secret nobody talks about.","Your salary is keeping you poor. Here's why.","The rich don't save money. They do THIS.","Why being 'frugal' is making you poorer.","This one habit cost me $100K. Don't do it.","The money mistake 99% of people make.","I was wrong about wealth. Here's the truth.","Passive income is a lie. Here's what actually works."],
+                curiosity: ["What if I told you making money is easier than you think?","The wealth secret hidden in plain sight...","This 5-minute daily habit changed my financial life.","There's one thing separating you from wealth...","I discovered this by accident. Now I'm financially free.","The question that made me rethink everything about money.","What the rich know that you don't (it's not investing).","This is why you're not rich yet. And it's not your fault.","The one thing I wish I knew about money at 20.","Everyone ignores this wealth principle. Big mistake."],
+                authority: ["After studying 100 millionaires, I found one pattern.","As a 7-figure entrepreneur, here's my #1 money rule.","I've read 50 wealth books. This is the only lesson that matters.","10 years of business taught me this ONE truth about money.","I built a $1M business. Here's what nobody tells you about wealth.","The #1 difference between rich and broke? It's not income.","I've helped 500 people get rich. They all do this ONE thing.","Most financial advice is wrong. Here's what actually works.","I went from broke to millionaire. This was the turning point.","Here's what 15 years of studying wealth taught me."],
+                emotional: ["You're not behind. You're just getting started.","Your worth is not your net worth. But here's the truth...","I know what it feels like to check your bank account and cry.","You deserve wealth. Here's why you don't have it yet.","The moment I stopped chasing money was the moment it came.","Don't let anyone tell you it's too late to build wealth.","You're closer to financial freedom than you think.","I was homeless. Now I'm a millionaire. Here's what changed.","The guilt of spending money? Let's talk about it.","You are one decision away from changing your financial life."],
+                funny: ["Me checking my bank account after learning about 'passive income':","POV: You tried every side hustle and you're still broke.","My bank account and I have a toxic relationship.","I followed every 'guru' and now I'm somehow poorer.","Being an entrepreneur is just expensive stress with extra steps.","My budget: 50% needs, 50% wants, and 0% for savings.","Trying to explain 'compound interest' to my broke self:","When the 'financial expert' on TikTok is also renting:","I invested $100 and now I have $85. Progress?","My financial plan: hope, pray, and occasionally panic."],
+                any: ["Stop scrolling. This video will change how you think about money.","The truth about wealth nobody on this app wants to hear.","Why you're not rich yet (and how to fix it in 60 seconds).","This changed my entire financial life in 30 days.","The difference between rich and poor isn't what you think.","I wish someone told me this about money 10 years ago.","The one money habit that separates winners from losers.","Your mindset about money is keeping you broke. Fix it.","This is your sign to start building wealth TODAY.","The wealth principle schools don't teach but should."]
+            },
+            mindset: {
+                shocking: ["Your mindset is the only thing between you and wealth.","Alpha mindset: stop caring what others think.","The 1% rule that changed my entire life.","Why motivation is a trap (and what to use instead).","Discipline > Motivation. Here's why.","The one thought pattern keeping you broke.","Stop thinking. Start doing. Here's how.","Your comfort zone is a wealth killer.","The mindset shift that made me a millionaire.","Why 99% of people never change their life."],
+                curiosity: ["What if your mindset is the only thing holding you back?","The mental shift that separates winners from losers...","This one question changed how I approach everything.","There's a difference between knowing and doing...","I discovered this mindset hack at my lowest point.","The question that rewired my brain for success.","What if discipline isn't what you think it is?","The mindset secret high performers won't tell you.","This mental model changed my life in 30 days.","The one belief that's keeping you average."],
+                authority: ["After coaching 1000 people, I found one mindset pattern.","As a mindset coach, here's the #1 shift you need.","I've studied peak performers for 15 years. This is the key.","10 years of self-development taught me this ONE truth.","I've mentored 500 people. They all needed this one shift.","The #1 mindset difference between winners and losers.","I've interviewed 100 successful people. They all share this.","Most mindset advice is wrong. Here's what actually works.","I went from depressed to thriving. This was the key.","Here's what 20 years of studying mindset taught me."],
+                emotional: ["You're stronger than you think.","I know what it feels like to want to give up.","The moment I stopped being a victim changed everything.","You're not weak. You're just untrained.","Don't let your past define your future.","You are one mindset shift away from a new life.","I was broken. Now I'm unstoppable. Here's how.","The pain you're feeling? It's preparing you.","You deserve success. Here's why you don't have it.","Your future self is begging you to start today."],
+                funny: ["Me trying to be 'positive' while life falls apart:","POV: You read one self-help book and think you're a guru.","My mindset after watching 100 motivation videos:","Trying to 'manifest' my way out of real problems:","Me explaining 'mindset' to my broke friends:","When 'good vibes only' meets reality:","My discipline lasts exactly 2 days. Progress?","Trying to be 'alpha' while crying inside:","Me after one meditation session thinking I'm enlightened:","My comfort zone and I have a codependent relationship."],
+                any: ["Stop scrolling. This will change your mindset forever.","The mindset truth nobody wants to hear.","Why you're stuck (and how to fix it in 60 seconds).","This mindset shift changed my life in 30 days.","The difference between winners and losers isn't talent.","I wish someone told me this 10 years ago.","The one mindset habit that separates the 1% from everyone else.","Your mindset is keeping you average. Here's the fix.","This is your sign to change your mindset TODAY.","The mindset principle schools don't teach but should."]
+            },
+            fitness: {
+                shocking: ["Stop doing cardio. Do THIS to lose fat.","The one exercise nobody does but should.","Why your workout routine is keeping you fat.","I got abs in 30 days. Here's the secret.","The fitness lie the industry doesn't want you to know.","Stop counting calories. Do this instead.","3 exercises that replaced my entire gym membership.","Why most people fail at fitness (and how to not).","The 5-minute routine that changed my body.","Your diet is wrong. Here's the truth."],
+                curiosity: ["What if everything you know about fitness is wrong?","The workout secret gym owners don't want you to know...","This 5-minute habit gave me better results than 2-hour workouts.","There's one exercise that beats all others...","I discovered this fitness hack by accident.","The question that changed my entire fitness journey.","What if losing fat is simpler than you think?","The fitness truth influencers won't tell you.","This one change transformed my body in 30 days.","Everyone ignores this fitness principle. Huge mistake."],
+                authority: ["After training 500 clients, I found one pattern.","As a certified trainer, here's my #1 fitness rule.","I've read 50 fitness books. This is the only lesson that matters.","10 years of training taught me this ONE truth.","I've helped 1000 people transform. They all do this one thing.","The #1 difference between fit and unfit? It's not genetics.","Most fitness advice is wrong. Here's what actually works.","I went from obese to shredded. This was the key.","Here's what 15 years in fitness taught me.","The fitness principle that beats every workout plan."],
+                emotional: ["You're not out of shape. You're just getting started.","I know what it feels like to hate your body.","The moment I stopped comparing changed everything.","You deserve to feel strong. Here's how.","Don't let anyone tell you it's too late.","You're closer to your dream body than you think.","I was 300lbs. Now I'm a fitness model. Here's how.","The guilt of eating? Let's talk about it.","You are one workout away from feeling different.","Your future self is begging you to start today."],
+                funny: ["Me after one workout expecting six-pack:","POV: You bought a gym membership and went twice.","My diet starts Monday. Every Monday.","I followed a fitness influencer and now I'm sore AND broke.","Being fit is just expensive suffering with extra steps.","My workout plan: lift heavy, cry, repeat.","Trying to explain 'macros' to my family:","When the fitness guru is clearly on steroids:","I ran for 5 minutes and now I need a nap.","My fitness journey: start, quit, restart, quit."],
+                any: ["Stop scrolling. This will change your fitness forever.","The fitness truth nobody wants to hear.","Why you're not fit (and how to fix it in 60 seconds).","This routine changed my body in 30 days.","The difference between fit and unfit isn't genetics.","I wish someone told me this about fitness 10 years ago.","The one fitness habit that separates the fit from the rest.","Your fitness routine is keeping you soft. Here's the fix.","This is your sign to start your fitness journey TODAY.","The fitness principle gyms don't teach but should."]
+            },
+            ai: {
+                shocking: ["AI will replace your job. Do THIS now.","This AI tool makes $10K/month. Legally.","I automated my entire income with AI. Here's how.","The AI tool nobody is talking about (but should be).","Stop paying for AI courses. Learn this instead.","AI made me $50K this year. Here's the exact workflow.","The one AI skill that will make you rich in 2026.","Why 90% of AI users are using it wrong.","This free AI tool is better than ChatGPT.","How to use AI to build wealth (even if you're a beginner)."],
+                curiosity: ["What if AI could replace your entire job?","The AI secret tech companies are hiding...","This AI tool does in 10 seconds what takes you 10 hours.","There's one AI skill that will make you rich...","I discovered this AI tool by accident. It changed everything.","The question that changed how I use AI forever.","What if you're using AI completely wrong?","The AI truth influencers won't tell you.","This one AI workflow replaced my entire team.","Everyone ignores this AI tool. Huge mistake."],
+                authority: ["After using 100 AI tools, I found the top 3.","As an AI developer, here's my #1 AI tool.","I've tested 200 AI tools. These 5 actually work.","5 years in AI taught me this ONE truth.","I've helped 500 businesses adopt AI. They all need this.","The #1 AI skill that separates rich from broke.","Most AI advice is wrong. Here's what actually works.","I went from broke to $50K/month with AI. Here's how.","Here's what 10 years in tech taught me about AI.","The AI principle that beats every prompt trick."],
+                emotional: ["AI isn't here to replace you. It's here to free you.","I know what it feels like to fear AI taking your job.","The moment I embraced AI changed my life.","You deserve to benefit from AI. Here's how.","Don't let AI scare you. Let it empower you.","You're closer to AI wealth than you think.","I was afraid of AI. Now it pays my bills. Here's how.","The fear of AI? Let's talk about it.","You are one AI skill away from a new income.","Your future self is begging you to learn AI today."],
+                funny: ["Me using AI to do work I could do myself but lazier:","POV: You asked ChatGPT to write your entire business plan.","My AI tool stack is bigger than my actual skills.","I tried to automate my life with AI. Now I'm confused.","Using AI for everything is just outsourcing your thinking.","Me explaining 'prompt engineering' to my mom:","When the AI generates better content than me:","I spent $500 on AI tools and made $0. ROI!","My AI strategy: ask ChatGPT, panic, repeat.","Trying to build an AI startup with zero coding skills:"],
+                any: ["Stop scrolling. This AI tool will change everything.","The AI truth nobody wants to hear.","Why you're not using AI right (and how to fix it).","This AI workflow changed my life in 30 days.","The difference between AI winners and losers.","I wish someone told me this about AI 10 months ago.","The one AI skill that separates the rich from everyone else.","Your AI usage is keeping you broke. Here's the fix.","This is your sign to learn AI TODAY.","The AI principle schools don't teach but should."]
+            },
+            business: {
+                shocking: ["Stop starting businesses. Do THIS instead.","I built a $100K business with $0. Here's how.","The business mistake that cost me $50K.","Why 95% of businesses fail (and how to not).","The one business model that works in 2026.","I fired all my clients. Here's why.","The truth about entrepreneurship nobody tells you.","Stop selling. Start doing THIS.","How to start a business with zero money.","The lazy business model that makes $500/day."],
+                curiosity: ["What if building a business is simpler than you think?","The business secret millionaires won't share...","This 5-minute daily habit built my $100K business.","There's one thing separating you from business success...","I discovered this business model by accident.","The question that changed my entire business.","What if you're building your business completely wrong?","The business truth gurus won't tell you.","This one change doubled my business in 30 days.","Everyone ignores this business principle. Huge mistake."],
+                authority: ["After building 10 businesses, I found one pattern.","As a 7-figure entrepreneur, here's my #1 business rule.","I've read 100 business books. This is the only lesson.","15 years of business taught me this ONE truth.","I've mentored 500 founders. They all need this one thing.","The #1 difference between successful and failed businesses.","I've invested in 50 startups. They all share this.","Most business advice is wrong. Here's what works.","I went from broke to $1M. This was the key.","Here's what 20 years in business taught me."],
+                emotional: ["You're not a failure. You're just getting started.","I know what it feels like to lose everything in business.","The moment I almost quit was my breakthrough.","You deserve business success. Here's why you don't have it.","Don't let anyone tell you it's too late to start.","You're closer to success than you think.","I was broke and homeless. Now I run a $1M business.","The fear of failure? Let's talk about it.","You are one decision away from changing your life.","Your future self is begging you to start today."],
+                funny: ["Me after watching one business YouTube video:","POV: You have 50 business ideas and 0 execution.","My business plan: 'figure it out' with extra steps.","I followed every business guru and I'm still broke.","Being an entrepreneur is just expensive stress.","Me explaining my 'business model' to my accountant:","When the business guru is also broke:","I invested $10K in my business and made $3. ROI!","My business strategy: hustle, burnout, repeat.","Trying to build a startup while watching Netflix:"],
+                any: ["Stop scrolling. This will change your business forever.","The business truth nobody wants to hear.","Why your business isn't growing (and how to fix it).","This changed my business in 30 days.","The difference between successful and failed businesses.","I wish someone told me this about business 10 years ago.","The one business habit that separates winners from losers.","Your business mindset is keeping you stuck. Here's the fix.","This is your sign to start your business TODAY.","The business principle schools don't teach but should."]
+            },
+            relationships: {
+                shocking: ["Stop chasing relationships. Do THIS instead.","The relationship advice that actually works.","Why you keep attracting the wrong people.","The one communication skill that saved my marriage.","Stop being nice. Start being respected.","The truth about modern dating nobody talks about.","Why your relationship patterns keep repeating.","The boundary that changed my life.","Stop fixing others. Fix this one thing first.","The mindset that attracts quality relationships."],
+                curiosity: ["What if your relationship patterns aren't your fault?","The relationship secret psychologists won't share...","This one question changed my entire love life.","There's one thing separating you from a great relationship...","I discovered this relationship truth by accident.","The question that changed how I see relationships.","What if you're approaching relationships completely wrong?","The relationship truth nobody tells you.","This one shift transformed my relationships.","Everyone ignores this relationship principle."],
+                authority: ["After counseling 1000 couples, I found one pattern.","As a relationship coach, here's my #1 rule.","I've studied relationships for 15 years. This is the key.","10 years of coaching taught me this ONE truth.","I've helped 500 people find love. They all needed this.","The #1 difference between healthy and toxic relationships.","Most relationship advice is wrong. Here's what works.","I saved my marriage with this one shift.","Here's what 20 years of studying relationships taught me.","The relationship principle that beats every dating tip."],
+                emotional: ["You deserve a healthy relationship. Here's why you don't have one.","I know what it feels like to be lonely in a relationship.","The moment I stopped chasing changed everything.","You're not unlovable. You're just choosing wrong.","Don't let anyone tell you it's too late for love.","You're closer to a great relationship than you think.","I was toxic. Now I'm healing. Here's how.","The pain of heartbreak? Let's talk about it.","You are one boundary away from a better relationship.","Your future self is begging you to set boundaries today."],
+                funny: ["Me after reading one relationship book thinking I'm a therapist:","POV: You take relationship advice from TikTok.","My dating strategy: overthink, panic, ghost.","I followed dating gurus and now I'm single AND confused.","Being in a relationship is just expensive compromise.","Me explaining my 'type' to my therapist:","When the relationship guru has been divorced 3 times:","I spent $1000 on dating apps and got 0 dates. ROI!","My relationship plan: hope, cry, repeat.","Trying to manifest a relationship while avoiding people:"],
+                any: ["Stop scrolling. This will change your relationships forever.","The relationship truth nobody wants to hear.","Why your relationships fail (and how to fix it).","This changed my relationships in 30 days.","The difference between healthy and toxic relationships.","I wish someone told me this about relationships 10 years ago.","The one relationship habit that separates healthy from toxic.","Your relationship patterns are keeping you stuck. Fix this.","This is your sign to improve your relationships TODAY.","The relationship principle nobody teaches but should."]
+            },
+            productivity: {
+                shocking: ["Stop using to-do lists. Do THIS instead.","The productivity system that changed my life.","Why most productivity apps make you LESS productive.","I tried 50 productivity systems. This one won.","The 2-minute rule that doubled my output.","Stop managing time. Manage THIS instead.","Why your morning routine is wasting your time.","The one habit that replaced 10 others.","Deep work > busy work. Here's how.","The productivity secret high performers know."],
+                curiosity: ["What if everything you know about productivity is wrong?","The productivity secret high performers won't share...","This 2-minute habit doubled my output in 30 days.","There's one thing separating you from peak productivity...","I discovered this productivity hack by accident.","The question that changed how I work forever.","What if you're managing your time completely wrong?","The productivity truth gurus won't tell you.","This one shift doubled my productivity.","Everyone ignores this productivity principle."],
+                authority: ["After coaching 1000 people, I found one productivity pattern.","As a productivity coach, here's my #1 rule.","I've tested 50 systems in 15 years. This is the key.","10 years of studying peak performance taught me this.","I've helped 500 executives. They all need this one thing.","The #1 difference between productive and busy people.","Most productivity advice is wrong. Here's what works.","I doubled my output with this one change.","Here's what 20 years of studying productivity taught me.","The productivity principle that beats every app."],
+                emotional: ["You're not lazy. You're just overwhelmed.","I know what it feels like to be busy but not productive.","The moment I stopped doing everything changed my life.","You deserve to feel productive. Here's how.","Don't let anyone tell you you're not disciplined.","You're closer to peak productivity than you think.","I was a procrastinator. Now I'm a machine. Here's how.","The guilt of not doing enough? Let's talk about it.","You are one system away from a different life.","Your future self is begging you to start today."],
+                funny: ["Me after installing 20 productivity apps and using none:","POV: You have 5 to-do apps and 0 completed tasks.","My productivity system: plan, procrastinate, feel guilty.","I bought a planner and now I'm a 'productivity expert'.","Being productive is just organized stress with extra steps.","Me explaining my 'system' while my desk is chaos:","When the productivity guru is clearly burned out:","I spent $500 on productivity tools and got nothing done. ROI!","My productivity strategy: make lists, ignore lists, repeat.","Trying to be productive while watching 3 YouTube videos:"],
+                any: ["Stop scrolling. This will change your productivity forever.","The productivity truth nobody wants to hear.","Why you're not productive (and how to fix it in 60 seconds).","This productivity system changed my life in 30 days.","The difference between productive and busy people.","I wish someone told me this about productivity 10 years ago.","The one productivity habit that separates winners from losers.","Your productivity system is keeping you stuck. Fix this.","This is your sign to boost your productivity TODAY.","The productivity principle nobody teaches but should."]
+            },
+            motivation: {
+                shocking: ["Motivation is a trap. Here's what actually works.","Stop watching motivation videos. Do THIS.","The truth about discipline nobody talks about.","Why you're not lazy. You're just doing this wrong.","I stopped waiting for motivation. Here's what happened.","The one mindset shift that changed everything.","Discipline is self-respect. Here's why.","Stop feeling inspired. Start being consistent.","The motivation myth that's keeping you stuck.","Why action beats motivation every single time."],
+                curiosity: ["What if motivation isn't what you think it is?","The motivation secret gurus won't share...","This 2-minute habit replaced my need for motivation.","There's one thing separating you from consistent action...","I discovered this truth by accident. It changed everything.","The question that changed my entire approach to motivation.","What if you don't need motivation at all?","The motivation truth nobody tells you.","This one shift made me unstoppable.","Everyone ignores this principle. Huge mistake."],
+                authority: ["After studying 1000 high performers, I found one pattern.","As a performance coach, here's my #1 rule.","I've read 50 motivation books. This is the only lesson.","10 years of coaching taught me this ONE truth.","I've helped 500 people transform. They all needed this.","The #1 difference between motivated and stuck people.","Most motivation advice is wrong. Here's what works.","I went from lazy to disciplined. This was the key.","Here's what 20 years of studying peak performance taught me.","The motivation principle that beats every video."],
+                emotional: ["You're not lazy. You're just scared.","I know what it feels like to want to give up.","The moment I stopped waiting for motivation changed my life.","You deserve to feel alive again. Here's how.","Don't let anyone tell you you're not enough.","You're closer to your breakthrough than you think.","I was a quitter. Now I'm unstoppable. Here's how.","The pain of not trying? Let's talk about it.","You are one action away from a different life.","Your future self is begging you to start today."],
+                funny: ["Me after one motivation video thinking I'm a new person:","POV: You watch motivation videos instead of working.","My motivation lasts exactly until the video ends.","I followed a motivation guru and now I'm motivated AND broke.","Being motivated is just temporary delusion with extra steps.","Me explaining 'discipline' while eating junk food:","When the motivation guru is clearly not disciplined:","I spent $200 on motivation courses and did nothing. ROI!","My motivation strategy: watch, cry, do nothing, repeat.","Trying to be motivated while lying in bed all day:"],
+                any: ["Stop scrolling. This will change your motivation forever.","The motivation truth nobody wants to hear.","Why you're not motivated (and how to fix it in 60 seconds).","This changed my entire life in 30 days.","The difference between motivated and stuck people.","I wish someone told me this 10 years ago.","The one habit that separates the motivated from the stuck.","Your motivation is keeping you stuck. Here's the fix.","This is your sign to take action TODAY.","The motivation principle nobody teaches but should."]
+            }
+        };
+        
+        function getHooks(niche, tone) {
+            const templates = hookTemplates[niche] || hookTemplates.wealth;
+            return templates[tone] || templates.any;
+        }
+        
+        function generateHooks() {
+            const niche = document.getElementById('hookNiche').value;
+            const tone = document.getElementById('hookTone').value;
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = 'Generating...';
+            showLoading('hooks-output');
+            setTimeout(() => {
+                const hooks = getHooks(niche, tone);
+                let output = '🎯 10 VIRAL HOOKS — ' + niche.toUpperCase() + ' / ' + tone.toUpperCase() + '\n\n';
+                hooks.forEach((h, i) => { output += `${i+1}. ${h}\n\n`; });
+                output += '---\n💡 Tip: Use these as the FIRST 3 seconds of your Short.';
+                showOutput('hooks-output', output);
+                updateStats('hooks');
+                btn.disabled = false;
+                btn.textContent = 'Generate 10 Viral Hooks';
+            }, 800);
+        }
+        
+        function generateScript() {
+            const topic = document.getElementById('scriptTopic').value || 'building wealth';
+            const duration = document.getElementById('scriptDuration').value;
+            const style = document.getElementById('scriptStyle').value;
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = 'Writing Script...';
+            showLoading('script-output');
+            setTimeout(() => {
+                const script = generateLocalScript(topic, duration, style);
+                showOutput('script-output', script);
+                updateStats('scripts');
+                btn.disabled = false;
+                btn.textContent = 'Write Full Script';
+            }, 800);
+        }
+        
+        function generateLocalScript(topic, duration, style) {
+            const scripts = {
+                '15': `🎬 SHORTS SCRIPT: ${topic}\nDuration: 15 seconds\nStyle: ${style}\n\n[0-3s] HOOK:\n"${topic} — here's what nobody tells you."\n\n[3-10s] BODY:\nMost people get this wrong. The truth is simpler than you think. The key isn't doing more. It's doing the RIGHT things consistently.\n\n[10-15s] CTA:\nFollow for more. This is just the beginning.\n\n---\n📊 Word count: ~40 words\n⏱️ Reading time: 15 seconds`,
+                '30': `🎬 SHORTS SCRIPT: ${topic}\nDuration: 30 seconds\nStyle: ${style}\n\n[0-3s] HOOK:\n"Stop. If you care about ${topic}, this will change everything."\n\n[3-10s] PROBLEM:\nHere's the problem: 99% of people approach ${topic} the wrong way. They focus on the wrong things, follow the wrong advice, and wonder why nothing changes.\n\n[10-20s] SOLUTION:\nThe truth? It comes down to one simple principle. Consistency over intensity. Small daily actions compound into massive results. Not motivation. Not hype. Just consistent action.\n\n[20-25s] EXAMPLE:\nI went from struggling to thriving in 90 days — not because I found a secret, but because I started doing the boring basics every single day.\n\n[25-30s] CTA:\nSave this. Follow for more. Your future self will thank you.\n\n---\n📊 Word count: ~85 words\n⏱️ Reading time: 30 seconds\n🎥 Suggested: Fast cuts every 3-5s, dynamic captions, trending audio`,
+                '45': `🎬 SHORTS SCRIPT: ${topic}\nDuration: 45 seconds\nStyle: ${style}\n\n[0-3s] HOOK:\n"Everything you know about ${topic} is probably wrong."\n\n[3-10s] PROBLEM:\nLet me explain. Most people fail at ${topic} because they're following advice from people who've never actually done it. They're copying surface-level tactics without understanding the deeper principles.\n\n[10-20s] ROOT CAUSE:\nThe real issue? It's not about knowledge. It's about execution. You don't need more information — you need better implementation. The gap between knowing and doing is where most people get stuck.\n\n[20-30s] SOLUTION:\nHere's what worked for me: I stopped consuming and started creating. I stopped learning and started doing. I picked ONE thing and went all in for 90 days. That changed everything.\n\n[30-40s] ACTION STEPS:\n1. Pick your ONE thing\n2. Set a 90-day deadline\n3. Track daily, not weekly\n4. Share your journey publicly\n5. Fail forward, every single day\n\n[40-45s] CTA:\nFollow for more. And go make it happen.\n\n---\n📊 Word count: ~130 words\n⏱️ Reading time: 45 seconds\n🎥 Suggested: B-roll cuts, text overlay for each step, suspenseful music`,
+                '60': `🎬 SHORTS SCRIPT: ${topic}\nDuration: 60 seconds\nStyle: ${style}\n\n[0-3s] HOOK:\n"I was wrong about ${topic}. Here's what I learned the hard way."\n\n[3-10s] STORY SETUP:\nTwo years ago, I was the person who knew everything about ${topic} but had nothing to show for it. Sound familiar?\n\n[10-20s] THE MISTAKE:\nI spent years collecting tips, watching videos, reading books. I was addicted to learning but allergic to doing. My life looked the same year after year.\n\n[20-30s] THE WAKE-UP CALL:\nThen someone asked me: "If you know so much, why haven't you done it?" That question broke me. And rebuilt me.\n\n[30-40s] THE SHIFT:\nI stopped learning. For 90 days, I consumed zero content about ${topic}. Instead, I spent that time DOING. One small action every day. Tracked it. Shared it publicly.\n\n[40-50s] THE RESULT:\nIn 90 days, I made more progress than the previous 5 years combined. Not because I was smarter — because I was consistent. Execution beats knowledge every time.\n\n[50-60s] THE LESSON + CTA:\nHere's the lesson: You already know enough. The question is: will you start? Follow for more. Go.\n\n---\n📊 Word count: ~180 words\n⏱️ Reading time: 60 seconds\n🎥 Suggested: Emotional music building, face-to-camera for hook and CTA, B-roll for middle sections`
+            };
+            return scripts[duration] || scripts['30'];
+        }
+        
+        function generateSEO() {
+            const topic = document.getElementById('seoTopic').value || 'wealth mindset';
+            const audience = document.getElementById('seoAudience').value;
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = 'Generating SEO...';
+            showLoading('seo-output');
+            setTimeout(() => {
+                const t = topic.toLowerCase().replace(/[^a-z0-9\s]/g, '');
+                const capsTopic = topic.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                const titles = [
+                    `${capsTopic} — The Truth Nobody Tells You 🧠 #shorts`,
+                    `Why ${capsTopic} Changes Everything ⚡ #shorts`,
+                    `The ${capsTopic} Secret That Changed My Life 💡 #shorts`,
+                    `${capsTopic}: What 99% of People Get Wrong ❌ #shorts`
+                ];
+                const desc = `Stop scrolling and listen. ${capsTopic} is the one thing most people overlook — but it's the difference between success and failure. In this Short, we break down exactly what changes when you shift your perspective.\n\nIf this resonated, follow for more daily content on ${topic}, wealth mindset, and personal growth.\n\n#${topic.replace(/\s/g,'')} #shorts #motivation #wealthmindset #success #mindset #growth #entrepreneur #financialfreedom`;
+                const tags = [`${topic}`,`${topic} tips`,`how to ${topic}`,`${topic} for beginners`,`${topic} motivation`,`${topic} success`,'wealth mindset','money tips','personal growth','self improvement','success tips','motivation','entrepreneur','financial freedom','passive income','money habits','discipline','mindset shift','alpha mindset','success mindset'];
+                let output = '🏷️ YOUTUBE SEO PACKAGE\n' + '='.repeat(50) + '\n\n📺 TITLE OPTIONS (Pick one):\n';
+                titles.forEach((t, i) => output += `  ${i+1}. ${t}\n`);
+                output += '\n\n📝 DESCRIPTION:\n' + desc + '\n';
+                output += '\n\n🏷️ TAGS (Copy all to YouTube Studio):\n' + tags.join(', ') + '\n';
+                output += '\n\n📊 BEST UPLOAD TIMES (US):\n  • 12:00 PM EST (Lunch break)\n  • 6:00 PM EST (After work)\n  • 9:00 PM EST (Prime time)\n';
+                output += '\n💡 PRO TIP: Pin a comment with a link to your next video or affiliate product.';
+                showOutput('seo-output', output);
+                updateStats('seo');
+                btn.disabled = false;
+                btn.textContent = 'Generate Full SEO Package';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
